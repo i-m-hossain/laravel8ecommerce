@@ -42,7 +42,20 @@
                 <x-jet-button class="ml-4">
                     {{ __('Login') }}
                 </x-jet-button>
+                    <a href="{{ route('login.google') }}" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2 btn-google">
+                        <strong>Login With Google</strong>
+                    </a>
+                    <a href="{{ route('login.facebook') }}" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
+                        <strong>Facebook Login</strong>
+                    </a><a href="{{ route('login.github') }}" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
+                        <strong>Github Login</strong>
+                    </a>
             </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+
+
+
+
+
