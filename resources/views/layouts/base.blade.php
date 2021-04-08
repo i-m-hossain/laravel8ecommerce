@@ -43,12 +43,12 @@
                     <div class="topbar-menu right-menu">
                         <ul>
                             <li class="menu-item lang-menu menu-item-has-children parent">
-                                <a title="English" href="#"><span class="img label-before"><img src="assets/images/lang-en.png" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <a title="English" href="#"><span class="img label-before"><img src="{{asset ('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="submenu lang" >
-                                    <li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="assets/images/lang-hun.png" alt="lang-hun"></span>Hungary</a></li>
-                                    <li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="assets/images/lang-ger.png" alt="lang-ger" ></span>German</a></li>
-                                    <li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="assets/images/lang-fra.png" alt="lang-fre"></span>French</a></li>
-                                    <li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="assets/images/lang-can.png" alt="lang-can"></span>Canada</a></li>
+                                    <li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-hun.png') }}" alt="lang-hun"></span>Hungary</a></li>
+                                    <li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-ger.png') }}" alt="lang-ger" ></span>German</a></li>
+                                    <li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-fra.png') }}" alt="lang-fre"></span>French</a></li>
+                                    <li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-can.png') }}" alt="lang-can"></span>Canada</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-has-children parent" >
@@ -66,26 +66,29 @@
                                 </ul>
                             </li>
 
-                            @if(Route::has('login'))
-                                @auth
+                            @if(Route::has('login')) <!-- by default, Auth::routes() registers a login route with the name login -->
+                                @auth <!-- if user is authenticated   -->
                                     @if(Auth::user()->utype === 'ADM')
                                         <li class="menu-item menu-item-has-children parent" >
-                                            <a title="Dollar (USD)" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            <a  ttitle="My account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                             <ul class="submenu curency" >
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{route('admin.dashboard')}}">Dashboard</a>
                                                 </li>
-                                                <li class="menu-item">
-                                                    <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                                </li>
+
                                                 <form id='logout-form' method="post" action="{{route('logout')}}">
                                                     @csrf
                                                 </form>
+
+                                                <li class="menu-item">
+                                                    <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                                </li>
+                                                
                                             </ul>
                                         </li>
                                     @else
                                         <li class="menu-item menu-item-has-children parent" >
-                                            <a title="Dollar (USD)" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            <a title="My Account" href="#">My Account({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                             <ul class="submenu curency" >
                                                 <li class="menu-item" >
                                                     <a title="Dashboard" href="{{route('user.dashboard')}}">Dashboard</a>
@@ -99,7 +102,7 @@
                                             </ul>
                                         </li>
                                     @endif
-                                @else
+                                @else <!-- if user is not authenticated -->
                                     <li class="menu-item" ><a title="Register or Login" href="{{route('login')}}">Login</a></li>
                                     <li class="menu-item" ><a title="Register or Login" href="{{route('register')}}">Register</a></li>
                                 @endif
@@ -199,7 +202,7 @@
                                 <a href="{{route('index')}}" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
                             </li>
                             <li class="menu-item">
-                                <a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+                                <a href="{{route('about.us')}}" class="link-term mercado-item-title">About Us</a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{route('shop')}}" class="link-term mercado-item-title">Shop</a>
@@ -211,7 +214,7 @@
                                 <a href="{{route('checkout')}}" class="link-term mercado-item-title">Checkout</a>
                             </li>
                             <li class="menu-item">
-                                <a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+                                <a href="{{route('contact.us')}}" class="link-term mercado-item-title">Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -221,7 +224,8 @@
     </div>
 </header>
 
-{{$slot}}
+
+{{$slot}} <!-- Contents-->
 
 <footer id="footer">
     <div class="wrap-footer-content footer-style-1">
@@ -464,10 +468,10 @@
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
-                            <li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>
-                            <li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
-                            <li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
-                            <li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>
+                            <li class="menu-item"><a href="{{route('about.us')}}" class="link-term">About us</a></li>
+                            <li class="menu-item"><a href="{{route('privacy.policy')}}" class="link-term">Privacy Policy</a></li>
+                            <li class="menu-item"><a href="{{route('terms.condition')}}" class="link-term">Terms & Conditions</a></li>
+                            <li class="menu-item"><a href="{{route('return.policy')}}" class="link-term">Return Policy</a></li>
                         </ul>
                     </div>
                 </div>

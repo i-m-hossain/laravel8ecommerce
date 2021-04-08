@@ -2,12 +2,17 @@
 
 
 use App\Http\Controllers\LoginController;
+use App\Http\Livewire\AboutUsComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
+use App\Http\Livewire\ContactUsComponent;
 use App\Http\Livewire\HomeComponent;
 
+use App\Http\Livewire\PrivacyPolicyComponent;
+use App\Http\Livewire\ReturnPolicyComponent;
 use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\TermsConditionComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -22,43 +27,53 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+
+// Route::get('/login', LoginComponent::class)->name('login');
 Route::get('/',HomeComponent::class)->name('index');
 Route::get('/shop',ShopComponent::class)->name('shop');
 Route::get('/cart',CartComponent::class)->name('cart');
 Route::get('/checkout',CheckoutComponent::class)->name('checkout');
+Route::get('/about-us',AboutUsComponent::class)->name('about.us');
+Route::get('/privacy-policy',PrivacyPolicyComponent::class)->name('privacy.policy');
+Route::get('/contact-us',ContactUsComponent::class)->name('contact.us');
+Route::get('/terms-condition',TermsConditionComponent::class)->name('terms.condition');
+Route::get('/return-policy',ReturnPolicyComponent::class)->name('return.policy');
 
 
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//    return view('dashboard');
-//})->name('dashboard');
+/*** 
+ * 
+ * Authentication
+ * 
+ * */
 
-// For User or Customer
-Route::middleware(['auth:sanctum', 'verified'])->group(function(){
-    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    // For User or Customer
+    Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+        Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
 
-});
-//For Admin
-Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
-    Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
-});
-
-
-//---------------------Socialite routes---------------//
-
-//----------------------------Google login-----------------------------//
-
-Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
-Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
-
-//-----------------------------Facebook login---------------------------//
-Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
-Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
+    });
+    //For Admin: first make middleware authadmin
+    Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
+        Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    });
 
 
-//-----------------------------Github login---------------------------//
-Route::get('login/github', [LoginController::class, 'redirectToGithub'])->name('login.github');
-Route::get('login/github/callback', [LoginController::class, 'handleGithubCallback']);
+/**
+ * 
+ *Socialite Login 
+ *
+ * */
+
+    //----------------------------Google login-----------------------------//
+
+    Route::get('login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
+    Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
+    //-----------------------------Facebook login---------------------------//
+    Route::get('login/facebook', [LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+    Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
+
+
+    //-----------------------------Github login---------------------------//
+    Route::get('login/github', [LoginController::class, 'redirectToGithub'])->name('login.github');
+    Route::get('login/github/callback', [LoginController::class, 'handleGithubCallback']);

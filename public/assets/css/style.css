@@ -7158,3 +7158,55 @@ background-color: #888888;
 	margin-bottom: 65px;
 	padding-left: 40px;
 }
+
+
+.text-red-600{
+    color:red;
+}
+
+.social-title{
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+   
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 9px 0;
+}
+.social-login{
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+
+}
+
+.flex-social {
+    width: 30%;
+    justify-content: space-between;
+    margin-right: 15px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+
+.social-google {
+    background: #FC5345;
+    
+}
+
+.social-github {
+    background-color: #363636;
+}
+
+.social-facebook {
+    margin-right: 0px;
+    background-color: #4C76BE;
+}
+.social-link{
+    text-decoration: none;
+    color: #fff;
+}

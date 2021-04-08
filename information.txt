@@ -1,0 +1,31 @@
+Topics Covered:
+
+    1. Laravel 8
+    2. Livewire & livewire components 
+    3. Jetstream athentication 
+
+
+
+
+
+
+
+
+
+
+
+
+Authentication for Admin:
+
+    1. Create middleware AuthAdmin, if a session('utype') is 'ADM' proceed to the next request
+    2. Now, we need to register the middleware in the kernel.php . Register in $routeMiddleware array
+    3. So, we need to create the session  session('utype') in vendor/laravel/fortify/src/actions/attemptToAuthenticate
+       Here, if authenticated users utype='ADM' then create a session  session(['utype'=>'ADM'])
+       else if authenticated usess utype='USR' then create session session['utype'=>'USR'] 
+       else return next request
+         
+Route List:
+
+    1. php artisan route:list --columns=method,name,uri,action
+    2. php artisan route:list --compact
+
