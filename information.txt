@@ -3,6 +3,9 @@ Topics Covered:
     1. Laravel 8
     2. Livewire & livewire components 
     3. Jetstream athentication 
+    4. Route, Middleware, Blade view, Model,Migrations, factory, seed
+
+
 
 
 
@@ -28,4 +31,7 @@ Route List:
 
     1. php artisan route:list --columns=method,name,uri,action
     2. php artisan route:list --compact
+
+Factory:
+    1.php artisan make:factory CategoryFactory --model=Category 
 
