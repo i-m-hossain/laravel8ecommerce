@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\LoginController;
+use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\AboutUsComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
@@ -39,6 +40,7 @@ Route::get('/privacy-policy',PrivacyPolicyComponent::class)->name('privacy.polic
 Route::get('/contact-us',ContactUsComponent::class)->name('contact.us');
 Route::get('/terms-condition',TermsConditionComponent::class)->name('terms.condition');
 Route::get('/return-policy',ReturnPolicyComponent::class)->name('return.policy');
+Route::get('/product-details/{slug}',DetailsComponent::class)->name('product.details');
 
 
 /*** 
