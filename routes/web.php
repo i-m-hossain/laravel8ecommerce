@@ -79,3 +79,7 @@ Route::get('/product-details/{slug}',DetailsComponent::class)->name('product.det
     //-----------------------------Github login---------------------------//
     Route::get('login/github', [LoginController::class, 'redirectToGithub'])->name('login.github');
     Route::get('login/github/callback', [LoginController::class, 'handleGithubCallback']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

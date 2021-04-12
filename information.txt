@@ -4,6 +4,8 @@ Topics Covered:
     2. Livewire & livewire components 
     3. Jetstream athentication 
     4. Route, Middleware, Blade view, Model,Migrations, factory, seed
+    5. Social login
+    6. Shopping Cart 
 
 
 
@@ -14,6 +16,14 @@ Topics Covered:
 
 
 
+
+Packages:
+
+Laravel      -- composer create-project laravel/laravel laravel-8-ecommerce
+LiveWire     -- composer require livewire/livewire
+Jetstream    -- composer require laravel/jetstream
+Shoppingcart -- composer require hardevine/shoppingcart
+Socialite    -- composer require laravel/socialite
 
 
 
@@ -34,4 +44,5 @@ Route List:
 
 Factory:
     1.php artisan make:factory CategoryFactory --model=Category 
+    2. SEED:  php artisan db:seed
 
