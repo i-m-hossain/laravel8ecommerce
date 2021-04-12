@@ -8,6 +8,7 @@ use Cart;
 class CartComponent extends Component
 {
 
+    
     public function increaseQuantity($rowId){
         $product = Cart::get($rowId);
         $qty = $product->qty + 1;
@@ -19,6 +20,14 @@ class CartComponent extends Component
         $product = Cart::get($rowId);
         $qty = $product->qty - 1;
         Cart::update($rowId, $qty);
+    }
+    public function remove($rowId)
+    {
+        Cart::remove($rowId);
+        session()->flash('success_message', 'Item has been removed');
+    }
+    public function destroy_all_cart(){
+        Cart::destroy();
     }
     public function render()
     {
