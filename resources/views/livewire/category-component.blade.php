@@ -5,7 +5,8 @@
         <div class="wrap-breadcrumb">
             <ul>
                 <li class="item-link"><a href="{{ route('index') }}" class="link">home</a></li>
-                <li class="item-link"><span>Shop</span></li>
+                <li class="item-link"><span>Product categories</span></li>
+                <li class="item-link"><span>{{ $category_name }}</span></li>
             </ul>
         </div>
         <div class="row">
@@ -20,7 +21,7 @@
 
                 <div class="wrap-shop-control">
 
-                    <h1 class="shop-title">Shop</h1>
+                    <h1 class="shop-title">{{ $category_name }}</h1>
 
                     <div class="wrap-right">
 
@@ -228,3 +229,4 @@
     </div><!--end container-->
 
 </main>
+
