@@ -5,7 +5,7 @@ Topics Covered:
     3. Jetstream athentication 
     4. Route, Middleware, Blade view, Model,Migrations, factory, seed
     5. Social login
-    6. Shopping Cart 
+    6. Shopping Cart
 
 
 
@@ -22,7 +22,7 @@ Packages:
 Laravel      -- composer create-project laravel/laravel laravel-8-ecommerce
 LiveWire     -- composer require livewire/livewire
 Jetstream    -- composer require laravel/jetstream
-Shoppingcart -- composer require hardevine/shoppingcart
+Shoppingcart -- composer require hardevine/shoppingcart   pubishing: php artisan vendor:publish --provider="Gloudemans\Shoppingcart\ShoppingcartServiceProvider" --tag="config"
 Socialite    -- composer require laravel/socialite
 
 

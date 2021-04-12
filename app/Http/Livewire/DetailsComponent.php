@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
+use Cart;
+
 
 
 
@@ -14,8 +16,17 @@ class DetailsComponent extends Component
     {
         $this->slug = $slug;
     }
-    
 
+    //Product adding to the cart
+    public function store($product_id, $product_name, $product_price)
+    {
+        Cart::add($product_id, $product_name,1, $product_price)->associate('App\Models\Product');
+        
+        session()->flash('success_message', 'Items added to the cart');
+        return redirect()->route('product.cart');
+    }
+    
+    // Product details page 
     public function render()
     {
         $product = Product::where('slug', $this->slug)->first();

@@ -33,7 +33,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/login', LoginComponent::class)->name('login');
 Route::get('/',HomeComponent::class)->name('index');
 Route::get('/shop',ShopComponent::class)->name('shop');
-Route::get('/cart',CartComponent::class)->name('cart');
+Route::get('/cart',CartComponent::class)->name('product.cart');
 Route::get('/checkout',CheckoutComponent::class)->name('checkout');
 Route::get('/about-us',AboutUsComponent::class)->name('about.us');
 Route::get('/privacy-policy',PrivacyPolicyComponent::class)->name('privacy.policy');

@@ -117,7 +117,7 @@
                 <div class="mid-section main-info-area">
 
                     <div class="wrap-logo-top left-section">
-                        <a href="index.html" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}" alt="mercado"></a>
+                        <a href="{{ route('index') }}" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}" alt="mercado"></a>
                     </div>
 
                     <div class="wrap-search center-section">
@@ -163,10 +163,12 @@
                             </a>
                         </div>
                         <div class="wrap-icon-section minicart">
-                            <a href="#" class="link-direction">
+                            <a href="{{ route('product.cart') }}" class="link-direction">
                                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                 <div class="left-info">
-                                    <span class="index">4 items</span>
+                                    @if (Cart::count()>0)
+                                        <span class="index">{{ Cart::count() }}items</span>    
+                                    @endif
                                     <span class="title">CART</span>
                                 </div>
                             </a>
@@ -209,7 +211,7 @@
                                 <a href="{{route('shop')}}" class="link-term mercado-item-title">Shop</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('cart')}}" class="link-term mercado-item-title">Cart</a>
+                                <a href="{{route('product.cart')}}" class="link-term mercado-item-title">Cart</a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{route('checkout')}}" class="link-term mercado-item-title">Checkout</a>
