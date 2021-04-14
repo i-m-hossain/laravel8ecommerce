@@ -17,6 +17,7 @@ use App\Http\Livewire\PrivacyPolicyComponent;
 use App\Http\Livewire\TermsConditionComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\WishlistComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,7 @@ Route::get('/terms-condition',TermsConditionComponent::class)->name('terms.condi
 Route::get('/return-policy',ReturnPolicyComponent::class)->name('return.policy');
 Route::get('/product-details/{slug}',DetailsComponent::class)->name( 'product.details');
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
-
+Route::get('/wishist', WishlistComponent::class)->name('product.wishlist');
 
 /*** 
  * 
