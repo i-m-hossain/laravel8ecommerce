@@ -7257,3 +7257,25 @@ svg{
 .wrap-pagination-info .rounded-r-md{
     margin-left: 5px;
 }
+.product-wish{
+    position: absolute;
+    top: 10%;
+    right:30px;
+    left:0;
+    text-align: right;
+    z-index:9999;
+    padding-top: 0;
+   
+}
+.product-wish .fa{
+    color:#cbcbcb;
+    font-size: 32px;
+}
+.product-wish .fa:hover {
+    color: red;
+    font-size: 35px;
+}
+.fill-heart{
+    color:red  !important;
+    font-size: 35px;
+}
