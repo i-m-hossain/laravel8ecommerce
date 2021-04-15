@@ -11,6 +11,7 @@ use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
 
 use App\Http\Controllers\LoginController;
+use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\ContactUsComponent;
 use App\Http\Livewire\ReturnPolicyComponent;
 use App\Http\Livewire\PrivacyPolicyComponent;
@@ -61,6 +62,7 @@ Route::get('/search', SearchComponent::class)->name('product.search');
     //For Admin: first make middleware authadmin
     Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
         Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+        Route::get('/admin/categories', AdminCategoryComponent::class)->name('admin.categories');
     });
 
 

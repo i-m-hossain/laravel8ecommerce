@@ -208,7 +208,7 @@
                                 <a href="{{route('shop')}}" class="link-term mercado-item-title">Shop</a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{route('cart')}}" class="link-term mercado-item-title">Cart</a>
+                                <a href="{{route('product.cart')}}" class="link-term mercado-item-title">Cart</a>
                             </li>
                             <li class="menu-item">
                                 <a href="{{route('checkout')}}" class="link-term mercado-item-title">Checkout</a>
