@@ -7279,3 +7279,19 @@ svg{
     color:red  !important;
     font-size: 35px;
 }
+/* 
+.save-for-later{
+
+    display: inline-block;
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: #ff2832;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fefefe;
+    line-height: 14px;
+    padding: 13px 18px;
+    margin: 0;
+} */
