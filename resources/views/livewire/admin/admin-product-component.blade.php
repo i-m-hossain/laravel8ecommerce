@@ -17,7 +17,7 @@
                                 All Products
                             </div>
                             <div class="col-md-6 ">
-                                <a href="" class="pull-right btn btn-success">Add New Product</a>
+                                <a href="{{ route('admin.addproduct') }}" class="pull-right btn btn-success">Add New Product</a>
                             </div>
                         </div>
                     </div>
@@ -36,10 +36,8 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody>
-                                
+                            <tbody>                                
                                 @foreach ( $products as $product )
-
                                     <tr>
                                         <td>{{ $product->id }}</td>
                                         <td><img src="{{ asset('assets/images/products') }}/{{ $product->image }}" alt="{{ $product->name }}" width="60px"></td>
@@ -56,10 +54,8 @@
                                             </a>
                                         </td>
                                     </tr>
-                                @endforeach
-                                
-                            </tbody>
-                            
+                                @endforeach                               
+                            </tbody>                           
                         </table>
                         {{ $products->links() }}
                     </div>
