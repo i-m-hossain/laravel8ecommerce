@@ -17,6 +17,8 @@ use App\Http\Livewire\ContactUsComponent;
 use App\Http\Livewire\ReturnPolicyComponent;
 use App\Http\Livewire\PrivacyPolicyComponent;
 use App\Http\Livewire\TermsConditionComponent;
+use App\Http\Livewire\AdminAddProductComponent;
+use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
@@ -66,7 +68,9 @@ Route::get('/search', SearchComponent::class)->name('product.search');
         Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
         Route::get('/admin/categories', AdminCategoryComponent::class)->name('admin.categories');
         Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.addcategory');
-        Route::get('/admin/category/edit/{cat_slug}', AdminEditCategoryComponent::class)->name('admin.editcategory'); 
+        Route::get('/admin/category/edit/{cat_slug}', AdminEditCategoryComponent::class)->name('admin.editcategory');
+        Route::get('/admin/products', AdminProductComponent::class)->name('admin.products');
+        Route::get('/admin/product/add', AdminAddProductComponent::class)->name('admin.addproduct');
     });
 
 

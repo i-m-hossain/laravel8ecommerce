@@ -29,7 +29,7 @@
                             
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label"> Category Name</label>
+                            <label class="col-md-4 control-label"> Category Slug</label>
                             <div class="col-md-4" >
                                 <input class="form-control input-md" type="text" placeholder="Category Slug" wire:model="slug">
                             </div>

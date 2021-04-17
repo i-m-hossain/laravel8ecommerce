@@ -40,19 +40,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $index=>$category)
+                                @foreach ($categories as $category)
                                     <tr>
-                                        <td>{{ $index+1 }}</td>
+                                        <td>{{ $category->id }}</td>
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->slug }}</td>
                                         <td>
-                                            <a href="{{ route('admin.editcategory',['cat_slug'=>$category->slug]) }}"><i class="fa fa-edit fa-2x"></i> </a>
+                                            <a href="{{ route('admin.editcategory',['cat_slug'=>$category->slug]) }}" title="Edit"><i class="fa fa-edit fa-2x"></i> </a>
                                             <a href="#" wire:click.prevent="deleteCategory({{ $category->id  }})" 
-                                                style="margin-left: 15px" > 
+                                                style="margin-left: 15px" title="Delete"> 
                                                 <i class="fa fa-times text-danger  fa-2x"></i> 
                                             </a>
                                         </td>
-
                                     </tr>
                                 @endforeach
                             </tbody>
