@@ -8,6 +8,10 @@ use App\Models\Category;
 class AdminCategoryComponent extends Component
 {
 
+    public function deleteCategory($id){
+        Category::find($id)->delete();
+        session()->flash('message', 'Category is deleted successfully');
+    }
 
     public function render()
     {
