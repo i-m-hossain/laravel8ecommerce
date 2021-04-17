@@ -46,7 +46,7 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->slug }}</td>
                                         <td>
-                                            <a href=""><i class="fa fa-edit fa-2x"></i> </a>
+                                            <a href="{{ route('admin.editcategory',['cat_slug'=>$category->slug]) }}"><i class="fa fa-edit fa-2x"></i> </a>
                                             <a href="#" wire:click.prevent="deleteCategory({{ $category->id  }})" 
                                                 style="margin-left: 15px" > 
                                                 <i class="fa fa-times text-danger  fa-2x"></i> 
