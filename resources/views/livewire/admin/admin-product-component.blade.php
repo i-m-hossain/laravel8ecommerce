@@ -9,7 +9,7 @@
     </style>
     <div class="container" style="padding:30px 0">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12">             
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
@@ -22,6 +22,11 @@
                         </div>
                     </div>
                     <div class="panel-body">
+                        @if (Session::has('message'))
+                            <div class="alert alert-success" role="alert">
+                                {{ Session::get("message") }}
+                            </div>
+                        @endif
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -48,7 +53,7 @@
                                         <td>{{ $product->created_at->diffForHumans() }}</td>
                                         <td>
                                             <a href="{{ route('admin.editproduct',['product_slug'=>$product->slug]) }}" title="Edit"><i class="fa fa-edit fa-2x"></i> </a>
-                                            <a href="#"  
+                                            <a href="#" wire:click.prevent='deleteProduct({{ $product->id }})'  
                                                 style="margin-left: 15px" title="Delete"> 
                                                 <i class="fa fa-times text-danger  fa-2x"></i> 
                                             </a>
