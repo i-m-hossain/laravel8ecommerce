@@ -47,7 +47,7 @@
                                         <td>{{ $product->category->name }}</td>
                                         <td>{{ $product->created_at->diffForHumans() }}</td>
                                         <td>
-                                            <a href="#" title="Edit"><i class="fa fa-edit fa-2x"></i> </a>
+                                            <a href="{{ route('admin.editproduct',['product_slug'=>$product->slug]) }}" title="Edit"><i class="fa fa-edit fa-2x"></i> </a>
                                             <a href="#"  
                                                 style="margin-left: 15px" title="Delete"> 
                                                 <i class="fa fa-times text-danger  fa-2x"></i> 
