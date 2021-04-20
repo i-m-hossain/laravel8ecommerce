@@ -22,9 +22,12 @@ use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminAddProductComponent;
+use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
+use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 
 
 /*
@@ -74,6 +77,10 @@ Route::get('/search', SearchComponent::class)->name('product.search');
         Route::get('/admin/products', AdminProductComponent::class)->name('admin.products');
         Route::get('/admin/product/add', AdminAddProductComponent::class)->name('admin.addproduct');
         Route::get('/admin/product/edit/{product_slug}', AdminEditProductComponent::class)->name('admin.editproduct');
+        
+        Route::get('/admin/slider', AdminHomeSliderComponent::class)->name('admin.homeslider');
+        Route::get('/admin/slider/add', AdminAddHomeSliderComponent::class)->name('admin.addslider');
+        Route::get('/admin/slider/edit/{slider_id}', AdminEditHomeSliderComponent::class)->name('admin.editslider');
         
         
     });
