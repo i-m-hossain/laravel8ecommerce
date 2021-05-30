@@ -29,6 +29,7 @@ use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
+use App\Http\Livewire\Admin\AdminSaleComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,7 +83,7 @@ Route::get('/search', SearchComponent::class)->name('product.search');
         Route::get('/admin/slider/add', AdminAddHomeSliderComponent::class)->name('admin.addslider');
         Route::get('/admin/slider/edit/{slider_id}', AdminEditHomeSliderComponent::class)->name('admin.editslider');
         Route::get('/admin/home-categories', AdminHomeCategoryComponent::class)->name('admin.homecategories');
-        
+        Route::get('/admin/sale', AdminSaleComponent::class)->name('admin.sale');
         
     });
 

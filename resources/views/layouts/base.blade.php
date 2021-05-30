@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css')}}"> --}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/flexslider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css')}}">
@@ -89,7 +90,10 @@
                                                     <a title="Home Slider" href="{{route('admin.homeslider')}}">Manage Home Slider</a>
                                                 </li>
                                                 <li class="menu-item" >
-                                                    <a title="Home Slider" href="{{route('admin.homecategories')}}">Manage Home Categories</a>
+                                                    <a title="Manage Home Categories" href="{{route('admin.homecategories')}}">Manage Home Categories</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Sale setting" href="{{route('admin.sale')}}">Sale Setting</a>
                                                 </li>
 
                                                 <form id='logout-form' method="post" action="{{route('logout')}}">
@@ -453,15 +457,19 @@
     </div>
 </footer>
 
-<script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4')}}"></script>
-<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4')}}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+{{-- <script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4')}}"></script> --}}
+{{-- <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4')}}"></script> --}}
+{{-- <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script> --}}
 <script src="{{ asset('assets/js/jquery.flexslider.js')}}"></script>
 {{-- <script src="{{ asset('assets/js/chosen.jquery.min.js')}}"></script> --}}
 <script src="{{ asset('assets/js/owl.carousel.min.js')}}"></script>
 <script src="{{ asset('assets/js/jquery.countdown.min.js')}}"></script>
 <script src="{{ asset('assets/js/jquery.sticky.js')}}"></script>
 <script src="{{ asset('assets/js/functions.js')}}"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg==" crossorigin="anonymous"></script>

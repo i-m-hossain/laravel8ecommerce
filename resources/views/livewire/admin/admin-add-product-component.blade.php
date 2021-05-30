@@ -115,6 +115,7 @@
                                 <button class="btn btn-primary" type="submit">Create Product</button>
                             </div>
                         </div>
+                       
                     </form>
                     
                 </div>

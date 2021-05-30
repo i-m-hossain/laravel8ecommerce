@@ -118,6 +118,11 @@
                                 <button class="btn btn-primary" type="submit">Update</button>
                             </div>
                         </div>
+                        @if(Session::has('message'))
+                            <div class="alert alert-success" role="alert">
+                                {{ Session::get('message') }}
+                            </div>
+                        @endif
                     </form>
                     
                 </div>
