@@ -25,14 +25,27 @@
                                 <input class="form-control input-md" 
                                     type="text" placeholder="Category name" 
                                     wire:model="name" wire:keyup="generateSlug()">
+                                
+                                <!--- Validation -->
+                                @error('name')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror    
                             </div>
                             
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label"> Category Slug</label>
                             <div class="col-md-4" >
-                                <input class="form-control input-md" type="text" placeholder="Category Slug" wire:model="slug">
+                                <input class="form-control input-md" 
+                                    type="text" placeholder="Category Slug" 
+                                    wire:model="slug">
+                                
+                                <!--- Validation -->
+                                @error('slug')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror     
                             </div>
+                            
                             
                         </div>
                         <div class="form-group ">

@@ -34,7 +34,8 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Stock</th>
-                                    <th>Price</th>
+                                    <th>Price($)</th>
+                                    <th>Sale Price($)</th>
                                     <th>Category</th>
                                     <th>Date</th>
                                     <th>Action</th>
@@ -48,12 +49,14 @@
                                         <td><img src="{{ asset('assets/images/products') }}/{{ $product->image }}" alt="{{ $product->name }}" width="60px"></td>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->stock_status }}</td>
-                                        <td>${{ $product->regular_price }}</td>
+                                        <td>{{ $product->regular_price }}</td>
+                                        <td>{{ $product->sale_price }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td>{{ $product->created_at->diffForHumans() }}</td>
                                         <td>
                                             <a href="{{ route('admin.editproduct',['product_slug'=>$product->slug]) }}" title="Edit"><i class="fa fa-edit fa-2x"></i> </a>
-                                            <a href="#" wire:click.prevent='deleteProduct({{ $product->id }})'  
+                                            <a href="#" onclick="confirm('are you sure want to delete this?')|| event.stopImmediatePropagation()"
+                                                wire:click.prevent='deleteProduct({{ $product->id }})'  
                                                 style="margin-left: 15px" title="Delete"> 
                                                 <i class="fa fa-times text-danger  fa-2x"></i> 
                                             </a>
