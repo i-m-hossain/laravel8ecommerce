@@ -99,7 +99,7 @@
                                     @foreach ($lproducts as $product)
                                         <div class="product product-style-2 equal-elem ">
                                             <div class="product-thumnail">
-                                                <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+                                                <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" title="{{ $product->name }}">
                                                     <figure><img src= "{{asset('assets/images/products')}}/{{$product->image}}" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
                                                 </a>
                                                 <div class="group-flash">
@@ -110,7 +110,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <a href="#" class="product-name"><span>{{ $product->name}} </span></a>
+                                                <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" class="product-name"><span>{{ $product->name}} </span></a>
                                                 <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
                                             </div>
                                         </div>                                       
